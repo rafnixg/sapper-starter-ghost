@@ -1,6 +1,6 @@
 # Casper(Ghost) theme in Svelte
 
-This is a template developed in svelte taking as reference to (https://github.com/TryGhost/Casper/)[https://github.com/TryGhost/Casper/]
+This is a template developed in svelte taking as reference to [https://github.com/TryGhost/Casper/](https://github.com/TryGhost/Casper/)
 ## Getting started
 
 ### Running the project
