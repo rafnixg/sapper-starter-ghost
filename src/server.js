@@ -8,7 +8,7 @@ const dev = NODE_ENV === 'development';
 
 polka() // You can also use Express
 	.use(
-		'casper-svelte',
+		// 'casper-svelte', // Export
 		compression({ threshold: 0 }),
 		sirv('static', { dev }),
 		sapper.middleware()
