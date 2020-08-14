@@ -1,6 +1,6 @@
 <script>
   import Nav from "./Nav.svelte";
-  let segment = "";
+  export let segment = "";
 </script>
 
 <header class="site-header">

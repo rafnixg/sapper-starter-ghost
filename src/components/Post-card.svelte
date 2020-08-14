@@ -1,12 +1,12 @@
 <script>
   import Avatar from "./icons/Avatar.svelte";
   export let title;
-  export let url;
   export let post_class;
   export let feature_image;
   export let primary_tag;
   export let excerpt;
   export let date;
+  export let slug;
   export let reading_time;
   export let authors = [];
 </script>
@@ -14,7 +14,7 @@
 <article class="post-card {post_class}">
 
   {#if feature_image}
-    <a class="post-card-image-link" href={url}>
+    <a class="post-card-image-link" href="/blog/{slug}">
       <img
         class="post-card-image"
         loading="lazy"
@@ -24,7 +24,7 @@
   {/if}
   <div class="post-card-content">
 
-    <a class="post-card-content-link" href={url}>
+    <a class="post-card-content-link" href="/blog/{slug}">
 
       <header class="post-card-header">
         {#if primary_tag}

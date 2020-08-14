@@ -1,8 +1,8 @@
 <script>
-  export let segment;
   import Facebook from "./icons/Facebook.svelte";
   import Rss from "./icons/Rss.svelte";
   import Twitter from "./icons/Twitter.svelte";
+  export let segment;
 </script>
 
 <nav class="site-nav">
@@ -41,7 +41,7 @@
     <div class="social-links">
       <a
         class="social-link social-link-fb"
-        href="@"
+        href="/"
         title="Facebook"
         target="_blank"
         rel="noopener">
@@ -49,13 +49,13 @@
       </a>
       <a
         class="social-link social-link-tw"
-        href="@"
+        href="/"
         title="Twitter"
         target="_blank"
         rel="noopener">
         <Twitter />
       </a>
-      <a class="rss-button" href="@" title="RSS" target="_blank" rel="noopener">
+      <a class="rss-button" href="/" title="RSS" target="_blank" rel="noopener">
         <Rss />
       </a>
     </div>

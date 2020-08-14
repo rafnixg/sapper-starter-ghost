@@ -18,7 +18,10 @@ import {onMount} from 'svelte';
   import Header from "../../components/Header.svelte";
   import Post from "../../components/Post.svelte";
   export let post;
-  onMount(()=>document.body.className += "post-template");
+  onMount(()=>{
+	document.body.className += " post-template";
+	}
+  );
 </script>
 
 
