@@ -14,13 +14,5 @@
 <Header {title} {description} />
 
 <main id="site-main" class="site-main outer">
-  <div class="inner posts">
-
-    <div class="post-feed">
-      {#each posts as post}
-        <Post {...post} />
-      {/each}
-    </div>
-
-  </div>
+  <h1>Index Page</h1>
 </main>

@@ -11,7 +11,7 @@ const posts = [
   {
     title: "A Full and Comprehensive Style Test",
     slug: "post1",
-    url: "http://localhost:4000/",
+    url: "http://localhost:3000/",
     post_class: "post",
     feature_image:
       "https://demo.ghost.io/content/images/size/w2000/2018/10/testimg-cover.jpg",
@@ -25,13 +25,13 @@ const posts = [
     authors: [
       {
         name: "Author name",
-        url: "http://localhost:4000",
+        url: "http://localhost:3000",
       },
     ],
   },
   {
     title: "A Full and Comprehensive Style Test",
-    url: "http://localhost:4000/",
+    url: "http://localhost:3000/",
     slug: "post2",
     post_class: "post",
     feature_image:
@@ -46,14 +46,14 @@ const posts = [
     authors: [
       {
         name: "Author name",
-        url: "http://localhost:4000",
+        url: "http://localhost:3000",
       },
     ],
   },
   {
     title: "A Full and Comprehensive Style Test",
     slug: "post3",
-    url: "http://localhost:4000/",
+    url: "http://localhost:3000/",
     post_class: "post",
     feature_image:
       "https://demo.ghost.io/content/images/size/w2000/2018/10/testimg-cover.jpg",
@@ -67,14 +67,14 @@ const posts = [
     authors: [
       {
         name: "Author name",
-        url: "http://localhost:4000",
+        url: "http://localhost:3000",
       },
     ],
   },
   {
     title: "A Full and Comprehensive Style Test",
     slug: "post4",
-    url: "http://localhost:4000/",
+    url: "http://localhost:3000/",
     post_class: "post",
     feature_image:
       "https://demo.ghost.io/content/images/size/w2000/2018/10/testimg-cover.jpg",
@@ -88,14 +88,14 @@ const posts = [
     authors: [
       {
         name: "Author name",
-        url: "http://localhost:4000",
+        url: "http://localhost:3000",
       },
     ],
   },
   {
     title: "A Full and Comprehensive Style Test",
     slug: "post5",
-    url: "http://localhost:4000/",
+    url: "http://localhost:3000/",
     post_class: "post",
     feature_image:
       "https://demo.ghost.io/content/images/size/w2000/2018/10/testimg-cover.jpg",
@@ -109,7 +109,7 @@ const posts = [
     authors: [
       {
         name: "Author name",
-        url: "http://localhost:4000",
+        url: "http://localhost:3000",
       },
     ],
   },

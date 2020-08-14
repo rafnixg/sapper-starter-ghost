@@ -3,10 +3,10 @@
   "description": "casper-svelte",
   "version": "0.0.1",
   "scripts": {
-    "dev": "PORT=4000 sapper dev",
+    "dev": "sapper dev",
     "build": "sapper build --legacy",
     "export": "sapper export --basepath casper-svelte --legacy",
-    "start": "PORT=4000 node __sapper__/build",
+    "start": "node __sapper__/build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
     "deploy": "npm run export && node ./scripts/gh-pages.js",
