@@ -14,7 +14,7 @@
 <article class="post-card {post_class}">
 
   {#if feature_image}
-    <a class="post-card-image-link" href="blog/{slug}">
+    <a class="post-card-image-link" href="{slug}">
       <img
         class="post-card-image"
         loading="lazy"
@@ -24,7 +24,7 @@
   {/if}
   <div class="post-card-content">
 
-    <a class="post-card-content-link" href="blog/{slug}">
+    <a class="post-card-content-link" href="{slug}">
 
       <header class="post-card-header">
         {#if primary_tag}
