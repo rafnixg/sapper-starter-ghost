@@ -18,13 +18,13 @@
               home
             </a>
           </li>
-          <!-- <li>
+          <li>
             <a
               aria-current={segment === 'about' ? 'page' : undefined}
               href="about">
               about
             </a>
-          </li> -->
+          </li>
           <li>
             <a
               rel="prefetch"

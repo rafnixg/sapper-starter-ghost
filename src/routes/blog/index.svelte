@@ -7,7 +7,6 @@
 </script>
 
 <script>
-	import Header from "../../components/Header-index.svelte";
 	import Post from "../../components/Post-card.svelte";
 	export let posts;
 	const title = "Blog";
@@ -17,8 +16,6 @@
 <svelte:head>
 	<title>Blog</title>
 </svelte:head>
-
-<Header {title} />
 
 <main id="site-main" class="site-main outer">
   <div class="inner posts">

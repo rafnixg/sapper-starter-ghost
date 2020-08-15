@@ -15,7 +15,6 @@
 
 <script>
 import {onMount} from 'svelte';
-  import Header from "../../components/Header.svelte";
   import Post from "../../components/Post.svelte";
   export let post;
   onMount(()=>{
@@ -29,8 +28,6 @@ import {onMount} from 'svelte';
 <svelte:head>
   <title>{post.title}</title>
 </svelte:head>
-
-<Header />
 
 <main id="site-main" class="site-main outer">
   <div class="inner">

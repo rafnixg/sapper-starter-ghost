@@ -1,5 +1,20 @@
+<script>
+import Header from "../components/Header.svelte";
+import HeaderIndex from "../components/Header-index.svelte";
+
+  export let segment;
+  console.log(segment)
+</script>
 <div class="site-wrapper">
-  <slot />
+
+  {#if !segment }
+    <HeaderIndex/>
+  {:else}
+    <Header/>
+  {/if}
+
+    <slot/>
+
   <footer class="site-footer outer">
     <div class="site-footer-content inner">
       <section class="copyright">
