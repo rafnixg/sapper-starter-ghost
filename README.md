@@ -1,9 +1,9 @@
-# Casper(Ghost) theme in Svelte
+# Casper(Ghost theme) theme in Svelte and Sapper [WIP]
 
-This is a template developed in svelte taking as reference to [https://github.com/TryGhost/Casper/](https://github.com/TryGhost/Casper/)
-## Getting started
+This is a template developed in svelte and sapper taking as reference to [https://github.com/TryGhost/Casper/](https://github.com/TryGhost/Casper/)
 
-### Running the project
+
+## Running the project
 
 However you get the code, you can install dependencies and run the project in development mode with:
 
@@ -27,3 +27,10 @@ vercel
 ```
 
 If your app can't be exported to a static site, you can use the [now-sapper](https://github.com/thgh/now-sapper) builder. You can find instructions on how to do so in its [README](https://github.com/thgh/now-sapper#basic-usage).
+
+## WIP
+- [ ] Ghost API Config (*.ghost*)
+- [ ] Google Analytics Config
+- [ ] RSS
+- [ ] Sitemap
+- [ ] Metadata SEO & Open Graph
