@@ -1,7 +1,6 @@
 <script>
     import Avatar from "./icons/Avatar.svelte";
     export let post;
-    console.log(post)
 </script>
 
 <article class="post-full {post.post_class}">

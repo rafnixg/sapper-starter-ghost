@@ -2,60 +2,54 @@
   import Facebook from "./icons/Facebook.svelte";
   import Rss from "./icons/Rss.svelte";
   import Twitter from "./icons/Twitter.svelte";
-  export let segment;
+  // export let segment;
+  export let nav;
 </script>
 
 <nav class="site-nav">
   <div class="site-nav-left-wrapper">
     <div class="site-nav-left">
-      <a class="site-nav-logo" href=".">Ghost</a>
+      <a class="site-nav-logo" href=".">{nav.title}</a>
       <div class="site-nav-content">
         <ul class="nav">
-          <li>
-            <a
-              aria-current={segment === undefined ? 'page' : undefined}
-              href=".">
-              home
-            </a>
-          </li>
-          <li>
-            <a
-              aria-current={segment === 'about' ? 'page' : undefined}
-              href="about">
-              about
-            </a>
-          </li>
-          <li>
-            <a
-              rel="prefetch"
-              aria-current={segment === 'blog' ? 'page' : undefined}
-              href="blog">
-              blog
-            </a>
-          </li>
+          {#each nav.navigation as link}
+            
+            <li>
+              <a
+                href={link.url}>
+                {link.label}
+              </a>
+            </li>
+          {/each}
         </ul>
       </div>
     </div>
   </div>
   <div class="site-nav-right">
     <div class="social-links">
+      {#if nav.social.facebook}
+        
       <a
         class="social-link social-link-fb"
-        href="/"
+        href="https://facebook.com/{nav.social.facebook}"
         title="Facebook"
         target="_blank"
         rel="noopener">
         <Facebook />
       </a>
+      {/if}
+      {#if nav.social.twitter}
+        
       <a
         class="social-link social-link-tw"
-        href="/"
+        href="https://twitter.com/{nav.social.twitter}"
         title="Twitter"
         target="_blank"
         rel="noopener">
         <Twitter />
       </a>
-      <a class="rss-button" href="/" title="RSS" target="_blank" rel="noopener">
+      {/if}
+      <a class="rss-button" href="rss" title="RSS" target="_blank" rel="noopener">
         <Rss />
       </a>
     </div>

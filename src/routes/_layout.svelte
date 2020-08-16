@@ -16,6 +16,16 @@
 
   export let settings;
   export let segment;
+  
+  const nav = {
+    title: settings.title,
+    description: settings.description,
+    navigation: settings.navigation,
+    social: {
+      twitter: settings.twitter,
+      facebook: settings.facebook
+    }
+  }
 </script>
 
 <svelte:head>
@@ -53,13 +63,13 @@
 <div class="site-wrapper">
 
   {#if !segment}
-    <HeaderIndex />
+    <HeaderIndex {nav}/>
   {:else}
-    <Header />
+    <Header {nav}/>
   {/if}
 
   <slot />
 
-  <Footer />
+  <Footer {nav} />
 </div>
   {@html settings.codeinjection_foot}
