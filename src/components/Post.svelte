@@ -1,6 +1,7 @@
 <script>
     import Avatar from "./icons/Avatar.svelte";
     export let post;
+    console.log(post)
 </script>
 
 <article class="post-full {post.post_class}">
@@ -9,9 +10,7 @@
 
         {#if post.primary_tag}
           <section class="post-full-tags">
-
-            <a href={post.url}>{post.primary_tag}</a>
-
+            <a href="tag/{post.primary_tag.slug}">{post.primary_tag.name}</a>
           </section>
         {/if}
 
@@ -46,7 +45,7 @@
                           <h2>{author.name}</h2>
                           <p>{author.bio}</p>
                           <p>
-                            <a href={author.url}>More posts</a>
+                            <a href="author/{author.slug}">More posts</a>
                             by {author.name}.
                           </p>
                         </div>
@@ -54,7 +53,7 @@
                         <h2>{author.name}</h2>
                         <p>
                           Read
-                          <a href={author.url}>more posts</a>
+                          <a href="author/{author.slug}">more posts</a>
                           by this author.
                         </p>
                       {/if}
@@ -62,7 +61,7 @@
                   </div>
 
                   {#if author.profile_image}
-                    <a href={author.url} class="author-avatar">
+                    <a href="author/{author.slug}" class="author-avatar">
                       <img
                         class="author-profile-image"
                         src={author.profile_image}
@@ -70,7 +69,7 @@
                     </a>
                   {:else}
                     <a
-                      href={author.url}
+                      href="author/{author.slug}"
                       class="author-avatar author-profile-image">
                       <Avatar />
                     </a>
@@ -81,14 +80,14 @@
             </ul>
 
             <section class="post-full-byline-meta">
-              <!-- <h4 class="author-name">{{authors}}</h4> -->
+              <h4 class="author-name">{post.primary_author.name}</h4> 
               <div class="byline-meta-content">
-                <time class="byline-meta-date" datetime={post.date}>
-                  {post.date}
+                <time class="byline-meta-date" datetime={post.published_at}>
+                  {post.published_at}
                 </time>
                 <span class="byline-reading-time">
                   <span class="bull">&bull;</span>
-                  {post.reading_time}
+                  {post.reading_time} MIN READ
                 </span>
               </div>
             </section>
@@ -106,8 +105,7 @@
 
       <section class="post-full-content">
         <div class="post-content">
-          {post.content}
-          <!-- {@html post.html} -->
+          {@html post.html}
         </div>
       </section>
 

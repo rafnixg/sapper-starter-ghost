@@ -9,8 +9,8 @@
 </script>
 
 <script>
-	import Post from "../components/Post-card.svelte";
-	export let posts;
+	import PostCard from "../components/Post-card.svelte";
+  export let posts;
 </script>
 
 
@@ -25,7 +25,7 @@
 
     <div class="post-feed">
       {#each posts as post}
-        <Post {...post} />
+        <PostCard {...post} />
       {/each}
     </div>
 
