@@ -3,9 +3,8 @@
     return this.fetch(`settings.json`)
       .then((r) => r.json())
       .then((settings) => {
-        return {settings} ;
+        return { settings };
       });
-    
   }
 </script>
 
@@ -15,17 +14,15 @@
   import Footer from "../components/Footer.svelte";
 
   export let settings;
-  export let segment;
-  
   const nav = {
     title: settings.title,
     description: settings.description,
     navigation: settings.navigation,
     social: {
       twitter: settings.twitter,
-      facebook: settings.facebook
-    }
-  }
+      facebook: settings.facebook,
+    },
+  };
 </script>
 
 <svelte:head>
@@ -55,21 +52,13 @@
   <meta property="og:site_name" content={settings.title} />
   <meta property="og:locale" content={settings.lang} />
   <meta property="article:author" content={settings.url} />
-  {#if settings.codeinjection_head}
-    {settings.codeinjection_head}
-  {/if}
+  {#if settings.codeinjection_head}{settings.codeinjection_head}{/if}
 </svelte:head>
 
 <div class="site-wrapper">
-
-  {#if !segment}
-    <HeaderIndex {nav}/>
-  {:else}
-    <Header {nav}/>
-  {/if}
 
   <slot />
 
   <Footer {nav} />
 </div>
-  {@html settings.codeinjection_foot}
+{@html settings.codeinjection_foot}

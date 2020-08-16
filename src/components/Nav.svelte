@@ -1,3 +1,4 @@
+
 <script>
   import Facebook from "./icons/Facebook.svelte";
   import Rss from "./icons/Rss.svelte";
@@ -13,12 +14,8 @@
       <div class="site-nav-content">
         <ul class="nav">
           {#each nav.navigation as link}
-            
             <li>
-              <a
-                href={link.url}>
-                {link.label}
-              </a>
+              <a href={link.url}>{link.label}</a>
             </li>
           {/each}
         </ul>
@@ -28,28 +25,31 @@
   <div class="site-nav-right">
     <div class="social-links">
       {#if nav.social.facebook}
-        
-      <a
-        class="social-link social-link-fb"
-        href="https://facebook.com/{nav.social.facebook}"
-        title="Facebook"
-        target="_blank"
-        rel="noopener">
-        <Facebook />
-      </a>
+        <a
+          class="social-link social-link-fb"
+          href="https://facebook.com/{nav.social.facebook}"
+          title="Facebook"
+          target="_blank"
+          rel="noopener">
+          <Facebook />
+        </a>
       {/if}
       {#if nav.social.twitter}
-        
+        <a
+          class="social-link social-link-tw"
+          href="https://twitter.com/{nav.social.twitter}"
+          title="Twitter"
+          target="_blank"
+          rel="noopener">
+          <Twitter />
+        </a>
+      {/if}
       <a
-        class="social-link social-link-tw"
-        href="https://twitter.com/{nav.social.twitter}"
-        title="Twitter"
+        class="rss-button"
+        href="rss"
+        title="RSS"
         target="_blank"
         rel="noopener">
-        <Twitter />
-      </a>
-      {/if}
-      <a class="rss-button" href="rss" title="RSS" target="_blank" rel="noopener">
         <Rss />
       </a>
     </div>

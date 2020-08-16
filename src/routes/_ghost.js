@@ -18,8 +18,13 @@ async function post(slug){
     const post = await api.posts.read({slug: slug}, {formats: ['html', 'plaintext'], include: 'tags,authors'});
     return post
 }
+async function author(slug){
+    const author = await api.authors.read({slug: slug}, {include: 'count.posts'});
+    return author
+}
 export default {
     settings: settings,
     posts: posts,
-    post: post
+    post: post,
+    author: author,
 }

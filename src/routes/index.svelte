@@ -1,25 +1,38 @@
 <script context="module">
-	export async function preload({ params, query }) {
+  export async function preload({ params, query }) {
+    const posts = await this.fetch(`index.json`)
+      .then((r) => r.json())
+      .then((posts) => {
+        return posts;
+      });
+    const settings = await this.fetch(`settings.json`).then((r) => r.json());
 
-    const posts = await this.fetch(`index.json`).then(r => r.json()).then(posts => {
-      return posts ;
-    });
-    return {posts}
-	}
+    return { posts, settings };
+  }
 </script>
 
 <script>
-	import PostCard from "../components/Post-card.svelte";
+  import PostCard from "../components/Post-card.svelte";
+  import HeaderIndex from "../components/Header-index.svelte";
   export let posts;
+  export let settings;
+  const nav = {
+    title: settings.title,
+    description: settings.description,
+    navigation: settings.navigation,
+    social: {
+      twitter: settings.twitter,
+      facebook: settings.facebook,
+    },
+  };
 </script>
 
-
 <svelte:head>
-	<title>Blog</title>
+  <title>Blog</title>
   <!--Twitter Card-->
- 
-</svelte:head>
 
+</svelte:head>
+<HeaderIndex {nav} />
 <main id="site-main" class="site-main outer">
   <div class="inner posts">
 

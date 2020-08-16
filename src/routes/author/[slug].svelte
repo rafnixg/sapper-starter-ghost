@@ -1,17 +1,18 @@
 <script context="module">
   export async function preload({ params, query }) {
-    const post = await this.fetch(`${params.slug}.json`).then((r) => r.json());
+    const author = await this.fetch(`author/${params.slug}.json`).then((r) =>
+      r.json()
+    );
     const settings = await this.fetch(`settings.json`).then((r) => r.json());
-
-    return { post, settings };
+    return { author, settings };
   }
 </script>
 
 <script>
+  import HeaderAuthor from "../../components/Header-author.svelte";
   import { onMount } from "svelte";
-  import Post from "../../components/Post.svelte";
-  import Header from "../../components/Header.svelte";
-  export let post;
+
+  export let author;
   export let settings;
   const nav = {
     title: settings.title,
@@ -23,18 +24,12 @@
     },
   };
   onMount(() => {
-    document.body.className += " post-template";
+    document.body.className = "author-template";
   });
 </script>
 
 <svelte:head>
-  <title>{post.title}</title>
+  <title>{author.name}</title>
 </svelte:head>
 
-<Header {nav} />
-
-<main id="site-main" class="site-main outer">
-  <div class="inner">
-    <Post {post} />
-  </div>
-</main>
+<HeaderAuthor {author} {nav} />
