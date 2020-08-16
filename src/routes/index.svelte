@@ -29,7 +29,7 @@
 
     <div class="post-feed">
       {#each posts as post}
-        <PostCard {...post} />
+        <PostCard {post} />
       {/each}
     </div>
 

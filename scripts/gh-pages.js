@@ -1,7 +1,7 @@
 var ghpages = require('gh-pages');
 
 ghpages.publish(
-    '__sapper__/export/casper-svelte',
+    '__sapper__/export/',
     {
         branch: 'gh-pages',
         repo: 'https://github.com/rafnixg/casper-svelte.git',

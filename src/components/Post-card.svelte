@@ -1,43 +1,36 @@
 <script>
   import Avatar from "./icons/Avatar.svelte";
-  export let title;
-  export let post_class;
-  export let feature_image;
-  export let primary_tag;
-  export let excerpt;
-  export let date;
-  export let slug;
-  export let reading_time;
-  export let authors = [];
+
+  export let post;
 </script>
 
-<article class="post-card {post_class}">
+<article class="post-card {post.slug}">
 
-  {#if feature_image}
-    <a class="post-card-image-link" href="{slug}">
+  {#if post.feature_image}
+    <a class="post-card-image-link" href="{post.slug}">
       <img
         class="post-card-image"
         loading="lazy"
-        src={feature_image}
-        alt={title} />
+        src={post.feature_image}
+        alt={post.title} />
     </a>
   {/if}
   <div class="post-card-content">
 
-    <a class="post-card-content-link" href="{slug}">
+    <a class="post-card-content-link" href="{post.slug}">
 
       <header class="post-card-header">
-        {#if primary_tag}
-          <div class="post-card-primary-tag">{primary_tag.name}</div>
+        {#if post.primary_tag}
+          <div class="post-card-primary-tag">{post.primary_tag.name}</div>
         {/if}
-        <h2 class="post-card-title">{title}</h2>
+        <h2 class="post-card-title">{post.title}</h2>
       </header>
 
       <section class="post-card-excerpt">
-        {#if feature_image}
-          <p>{excerpt}</p>
+        {#if post.feature_image}
+          <p>{post.excerpt}</p>
         {:else}
-          <p>{excerpt}</p>
+          <p>{post.excerpt}</p>
         {/if}
       </section>
 
@@ -45,7 +38,7 @@
 
     <footer class="post-card-meta">
       <ul class="author-list">
-        {#each authors as author}
+        {#each post.authors as author}
           <li class="author-list-item">
 
             <div class="author-name-tooltip">{author.name}</div>
@@ -67,11 +60,11 @@
 
       </ul>
       <div class="post-card-byline-content">
-      <span><a href="author/{authors[0].slug}">{authors[0].name}</a></span>
+      <span><a href="author/{post.primary_author.slug}">{post.primary_author.name}</a></span>
         <span class="post-card-byline-date">
-          <time datetime={date}>{date}</time>
+          <time datetime={post.published_at}>{post.published_at}</time>
           <span class="bull">&bull;</span>
-          {reading_time} MIN READ
+          {post.reading_time} MIN READ
         </span>
       </div>
     </footer>
