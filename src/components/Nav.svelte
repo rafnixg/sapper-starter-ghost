@@ -24,7 +24,7 @@
         <ul class="nav">
           {#each nav.navigation as link}
             <li>
-              <a href={link.url}>{link.label}</a>
+              <a href={link.url.endsWith('/')?link.url.slice(0,-1):link.url}>{link.label}</a>
             </li>
           {/each}
         </ul>
@@ -55,7 +55,7 @@
       {/if}
       <a
         class="rss-button"
-        href="rss"
+        href="/"
         title="RSS"
         target="_blank"
         rel="noopener">
