@@ -13,15 +13,7 @@
   import Header from "../../components/Header.svelte";
   export let post;
   export let settings;
-  const nav = {
-    title: settings.title,
-    description: settings.description,
-    navigation: settings.navigation,
-    social: {
-      twitter: settings.twitter,
-      facebook: settings.facebook,
-    },
-  };
+  
   onMount(() => {
     document.body.className += " post-template";
   });
@@ -31,7 +23,7 @@
   <title>{post.title}</title>
 </svelte:head>
 
-<Header {nav} />
+<Header {settings} />
 
 <main id="site-main" class="site-main outer">
   <div class="inner">

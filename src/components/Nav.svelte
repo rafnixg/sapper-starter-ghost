@@ -1,10 +1,19 @@
-
 <script>
   import Facebook from "./icons/Facebook.svelte";
   import Rss from "./icons/Rss.svelte";
   import Twitter from "./icons/Twitter.svelte";
   // export let segment;
-  export let nav;
+  // export let nav;
+  export let settings;
+  const nav = {
+    title: settings.title,
+    description: settings.description,
+    navigation: settings.navigation,
+    social: {
+      twitter: settings.twitter,
+      facebook: settings.facebook,
+    },
+  };
 </script>
 
 <nav class="site-nav">

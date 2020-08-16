@@ -16,15 +16,6 @@
   import HeaderIndex from "../components/Header-index.svelte";
   export let posts;
   export let settings;
-  const nav = {
-    title: settings.title,
-    description: settings.description,
-    navigation: settings.navigation,
-    social: {
-      twitter: settings.twitter,
-      facebook: settings.facebook,
-    },
-  };
 </script>
 
 <svelte:head>
@@ -32,7 +23,7 @@
   <!--Twitter Card-->
 
 </svelte:head>
-<HeaderIndex {nav} />
+<HeaderIndex {settings} />
 <main id="site-main" class="site-main outer">
   <div class="inner posts">
 

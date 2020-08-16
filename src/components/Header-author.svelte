@@ -3,13 +3,14 @@
   import Avatar from "./icons/Avatar.svelte";
   export let segment = "";
   export let author;
-  export let nav;
+  export let settings;
+  
 </script>
 
 <header class="site-archive-header">
   <div class="outer site-nav-main">
     <div class="inner">
-      <Nav {segment} {nav} />
+      <Nav {segment} {settings} />
     </div>
   </div>
   <div class="outer site-header-background no-image">

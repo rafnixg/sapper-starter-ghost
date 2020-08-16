@@ -1,13 +1,13 @@
 <script>
   import Nav from "./Nav.svelte";
   export let segment = "";
-  export let nav;
+  export let settings;
 </script>
 
 <header class="site-header">
   <div class="outer site-nav-main">
     <div class="inner">
-      <Nav {segment} {nav}/>
+      <Nav {segment} {settings}/>
     </div>
   </div>
 </header>

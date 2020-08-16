@@ -14,15 +14,6 @@
 
   export let author;
   export let settings;
-  const nav = {
-    title: settings.title,
-    description: settings.description,
-    navigation: settings.navigation,
-    social: {
-      twitter: settings.twitter,
-      facebook: settings.facebook,
-    },
-  };
   onMount(() => {
     document.body.className = "author-template";
   });
@@ -32,4 +23,4 @@
   <title>{author.name}</title>
 </svelte:head>
 
-<HeaderAuthor {author} {nav} />
+<HeaderAuthor {author} {settings} />
