@@ -1,4 +1,5 @@
 import posts from './blog/_posts.js';
+import ghost from "./_ghost";
 
 const contents = JSON.stringify(posts.map(post => {
 	return {
@@ -15,10 +16,15 @@ const contents = JSON.stringify(posts.map(post => {
 	};
 }));
 
-export function get(req, res) {
-	res.writeHead(200, {
-		'Content-Type': 'application/json'
-	});
+export async function get(req, res, next) {
 
-	res.end(contents);
+    const settings = await ghost.posts();
+   
+    if(settings !== null){
+        res.setHeader('Content-Type', 'application/json');
+		res.end(JSON.stringify(settings));
+	} else {
+		next();
+	}
+
 }

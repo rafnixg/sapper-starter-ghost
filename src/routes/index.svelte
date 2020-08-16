@@ -1,15 +1,16 @@
 <script context="module">
-	export function preload({ params, query }) {
-		return this.fetch(`index.json`).then(r => r.json()).then(posts => {
-			return { posts };
-		});
+	export async function preload({ params, query }) {
+
+    const posts = await this.fetch(`index.json`).then(r => r.json()).then(posts => {
+      return posts ;
+    });
+    return {posts}
 	}
 </script>
 
 <script>
 	import Post from "../components/Post-card.svelte";
 	export let posts;
-
 </script>
 
 
