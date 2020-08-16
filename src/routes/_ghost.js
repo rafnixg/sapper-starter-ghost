@@ -21,6 +21,12 @@ async function post(slug) {
   );
   return post;
 }
+async function tag(slug) {
+  const tag = await api.tags.read(
+    { slug: slug }
+  );
+  return tag;
+}
 async function author(slug) {
   const author = await api.authors.read(
     { slug: slug },
@@ -36,10 +42,20 @@ async function authorPost(slug) {
   });
   return post;
 }
+async function tagPost(slug) {
+  const post = await api.posts.browse({
+    limit: 5,
+    filter: `tag:${slug}`,
+    include: "tags,authors",
+  });
+  return post;
+}
 export default {
   settings: settings,
   posts: posts,
   post: post,
   author: author,
   authorPost: authorPost,
+  tag:tag,
+  tagPost: tagPost,
 };

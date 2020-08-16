@@ -35,6 +35,9 @@
             {#if author.location}
               <div class="author-location">{author.location}</div>
             {/if}
+            <div class="author-stats">
+              {author.posts.length} {author.posts.length <= 1 ? 'post':'posts'}
+            </div>
             {#if author.website}
               <span class="author-social-link">
                 <a href={author.website} target="_blank" rel="noopener">
