@@ -10,8 +10,12 @@ export let nav;
       </section>
       <nav class="site-footer-nav">
         <a href="/">Latest Posts</a>
+        {#if nav.social.facebook }
         <a href="https://facebook.com/{nav.social.facebook}" target="_blank" rel="noopener">Facebook</a>
+        {/if}
+        {#if nav.social.twitter }
         <a href="https://twitter.com/{nav.social.twitter}" target="_blank" rel="noopener">Twitter</a>
+        {/if}
         <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
       </nav>
     </div>

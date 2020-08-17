@@ -52,7 +52,7 @@
   <meta property="og:site_name" content={settings.title} />
   <meta property="og:locale" content={settings.lang} />
   <meta property="article:author" content={settings.url} />
-  {#if settings.codeinjection_head}{settings.codeinjection_head}{/if}
+  {#if settings.codeinjection_head}{@html settings.codeinjection_head}{/if}
 </svelte:head>
 
 <div class="site-wrapper">

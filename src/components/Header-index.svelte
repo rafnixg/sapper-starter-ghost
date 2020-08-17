@@ -10,7 +10,9 @@
       <Nav {segment} {settings}/>
       <div class="site-header-content">
         <h1 class="site-title">{settings.title}</h1>
+        {#if settings.description}
         <h2 class="site-description">{settings.description}</h2>
+        {/if}
       </div>
     </div>
   </div>
