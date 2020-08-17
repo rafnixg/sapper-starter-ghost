@@ -1,4 +1,4 @@
-# Casper(Ghost theme) theme in Svelte and Sapper [WIP]
+# Sapper starter Ghost [WIP]
 
 This is a template developed in svelte and sapper taking as reference to [https://github.com/TryGhost/Casper/](https://github.com/TryGhost/Casper/)
 
