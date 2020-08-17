@@ -1,7 +1,10 @@
 <script>
   import utils from "../utils";
+import PostCard from "./Post-card.svelte";
   export let related_posts;
   export let tag;
+  export let next_post;
+  export let prev_post;
 </script>
 
 <aside class="read-next outer">
@@ -39,6 +42,12 @@
           </footer>
         </article>
       {/if}
+    {#if next_post}
+      <PostCard post={next_post}/>
+    {/if}
+    {#if prev_post}
+      <PostCard post={prev_post}/>
+    {/if}
     </div>
   </div>
 </aside>

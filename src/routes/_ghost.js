@@ -1,9 +1,10 @@
 import GhostContentAPI from "@tryghost/content-api";
+import config from "../config";
 
 const api = new GhostContentAPI({
-  url: "https://demo.ghost.io",
-  key: "22444f78447824223cefc48062",
-  version: "v3",
+  url: config.GhostURL,
+  key: config.GhostContetKey,
+  version: config.GhostAPIVersion,
 });
 
 async function settings() {
@@ -22,13 +23,33 @@ async function post(slug) {
   return post;
 }
 async function relatedPost(tag) {
-  const posts = await api.posts.browse({ limit: 3,filter: `tags:${tag}` });
+  const posts = await api.posts.browse({ limit: 3, filter: `tags:${tag}` });
   return posts;
 }
-async function tag(slug) {
-  const tag = await api.tags.read(
-    { slug: slug }
+async function prevPost(slug, publishedAt) {
+  const post = await api.posts.browse(
+    {
+      include: "tags,authors",
+      order: "published_at desc",
+      limit: 1,
+      filter: "slug:-" + slug + "+published_at: <='" + publishedAt + "'",
+    }
   );
+  return post[0];
+}
+async function nextPost(slug, publishedAt) {
+  const post = await api.posts.browse(
+    {
+      include: "tags,authors",
+      order: "published_at asc",
+      limit: 1,
+      filter: "slug:-" + slug + "+published_at: >'" + publishedAt + "'",
+    }
+  );
+  return post[0];
+}
+async function tag(slug) {
+  const tag = await api.tags.read({ slug: slug });
   return tag;
 }
 async function author(slug) {
@@ -56,9 +77,11 @@ export default {
   settings: settings,
   posts: posts,
   post: post,
-  relatedPost:relatedPost,
+  relatedPost: relatedPost,
   author: author,
   authorPost: authorPost,
-  tag:tag,
+  tag: tag,
   tagPost: tagPost,
+  prevPost:prevPost,
+  nextPost:nextPost
 };

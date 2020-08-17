@@ -76,6 +76,5 @@
         </span>
       </div>
     </footer>
-
   </div>
 </article>

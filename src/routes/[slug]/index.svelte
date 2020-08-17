@@ -17,9 +17,8 @@
   export let settings;
   const tag = {
     name: post.primary_tag.name,
-    url: `tag/${post.primary_tag.slug}`
-
-  }
+    url: `tag/${post.primary_tag.slug}`,
+  };
   settings["postTitle"] = post.title;
   onMount(() => {
     document.body.className += " post-template";
@@ -38,4 +37,8 @@
   </div>
 </main>
 
-<ReadNext related_posts={post.related_posts} {tag}/>
+<ReadNext
+  related_posts={post.related_posts}
+  {tag}
+  next_post={post.next_post}
+  prev_post={post.prev_post} />
