@@ -2,9 +2,11 @@
   import Facebook from "./icons/Facebook.svelte";
   import Rss from "./icons/Rss.svelte";
   import Twitter from "./icons/Twitter.svelte";
+  import utils from "../utils";
+
   export let segment;
-  // export let nav;
   export let settings;
+
   const nav = {
     title: settings.title,
     description: settings.description,
@@ -24,7 +26,7 @@
         <ul class="nav">
           {#each nav.navigation as link}
             <li>
-              <a href={link.url.endsWith('/')?link.url.slice(0,-1):link.url}>{link.label}</a>
+              <a href={utils.pathFormat(link.url) }>{link.label}</a>
             </li>
           {/each}
         </ul>
