@@ -7,7 +7,7 @@
 <article class="post-card {post.slug}">
 
   {#if post.feature_image}
-    <a class="post-card-image-link" href="{post.slug}">
+    <a class="post-card-image-link" href={post.slug}>
       <img
         class="post-card-image"
         loading="lazy"
@@ -17,7 +17,7 @@
   {/if}
   <div class="post-card-content">
 
-    <a class="post-card-content-link" href="{post.slug}">
+    <a class="post-card-content-link" href={post.slug}>
 
       <header class="post-card-header">
         {#if post.primary_tag}
@@ -28,9 +28,9 @@
 
       <section class="post-card-excerpt">
         {#if post.feature_image}
-          <p>{post.excerpt}</p>
+          <p>{utils.excerptFormat(post.excerpt,170)}</p>
         {:else}
-          <p>{post.excerpt}</p>
+          <p>{utils.excerptFormat(post.excerpt,200)}</p>
         {/if}
       </section>
 
@@ -51,7 +51,9 @@
                   alt={author.name} />
               </a>
             {:else}
-              <a href="author/{author.slug}" class="static-avatar author-profile-image">
+              <a
+                href="author/{author.slug}"
+                class="static-avatar author-profile-image">
                 <Avatar />
               </a>
             {/if}
@@ -60,9 +62,15 @@
 
       </ul>
       <div class="post-card-byline-content">
-      <span><a href="author/{post.primary_author.slug}">{post.primary_author.name}</a></span>
+        <span>
+          <a href="author/{post.primary_author.slug}">
+            {post.primary_author.name}
+          </a>
+        </span>
         <span class="post-card-byline-date">
-          <time datetime={utils.dateFormat(post.published_at)}>{utils.dateFormat(post.published_at)}</time>
+          <time datetime={utils.dateFormat(post.published_at)}>
+            {utils.dateFormat(post.published_at)}
+          </time>
           <span class="bull">&bull;</span>
           {post.reading_time} MIN READ
         </span>

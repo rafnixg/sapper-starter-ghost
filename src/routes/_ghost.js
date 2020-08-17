@@ -11,7 +11,7 @@ async function settings() {
   return settings;
 }
 async function posts() {
-  const posts = await api.posts.browse({ limit: 5, include: "tags,authors" });
+  const posts = await api.posts.browse({ include: "tags,authors" });
   return posts;
 }
 async function post(slug) {
@@ -20,6 +20,10 @@ async function post(slug) {
     { formats: ["html", "plaintext"], include: "tags,authors" }
   );
   return post;
+}
+async function relatedPost(tag) {
+  const posts = await api.posts.browse({ limit: 3,filter: `tags:${tag}` });
+  return posts;
 }
 async function tag(slug) {
   const tag = await api.tags.read(
@@ -36,7 +40,6 @@ async function author(slug) {
 }
 async function authorPost(slug) {
   const post = await api.posts.browse({
-    limit: 5,
     filter: `author:${slug}`,
     include: "tags,authors",
   });
@@ -44,7 +47,6 @@ async function authorPost(slug) {
 }
 async function tagPost(slug) {
   const post = await api.posts.browse({
-    limit: 5,
     filter: `tag:${slug}`,
     include: "tags,authors",
   });
@@ -54,6 +56,7 @@ export default {
   settings: settings,
   posts: posts,
   post: post,
+  relatedPost:relatedPost,
   author: author,
   authorPost: authorPost,
   tag:tag,

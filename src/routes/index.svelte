@@ -12,10 +12,14 @@
 </script>
 
 <script>
+  import {onMount} from "svelte";
   import PostCard from "../components/Post-card.svelte";
   import HeaderIndex from "../components/Header-index.svelte";
   export let posts;
   export let settings;
+   onMount(() => {
+    document.body.className = "home-template";
+  });
 </script>
 
 <svelte:head>

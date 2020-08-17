@@ -7,6 +7,11 @@ const dateFormat = (dateString) => {
   return `${day} ${month} ${year}`;
 };
 
+const excerptFormat = (excerpt, length) =>{
+  return excerpt.slice(0,length);
+}
+
 export default {
-    dateFormat:dateFormat
+    dateFormat:dateFormat,
+    excerptFormat:excerptFormat
 }

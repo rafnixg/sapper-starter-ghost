@@ -11,9 +11,16 @@
   import { onMount } from "svelte";
   import Post from "../../components/Post.svelte";
   import Header from "../../components/Header.svelte";
+  import ReadNext from "../../components/Read-next.svelte";
+
   export let post;
   export let settings;
-  
+  const tag = {
+    name: post.primary_tag.name,
+    url: `tag/${post.primary_tag.slug}`
+
+  }
+  settings["postTitle"] = post.title;
   onMount(() => {
     document.body.className += " post-template";
   });
@@ -30,3 +37,5 @@
     <Post {post} />
   </div>
 </main>
+
+<ReadNext related_posts={post.related_posts} {tag}/>

@@ -2,7 +2,7 @@
   import Facebook from "./icons/Facebook.svelte";
   import Rss from "./icons/Rss.svelte";
   import Twitter from "./icons/Twitter.svelte";
-  // export let segment;
+  export let segment;
   // export let nav;
   export let settings;
   const nav = {
@@ -28,6 +28,9 @@
             </li>
           {/each}
         </ul>
+        {#if !segment}
+          <span class="nav-post-title ">{settings.postTitle}</span>
+        {/if}
       </div>
     </div>
   </div>
