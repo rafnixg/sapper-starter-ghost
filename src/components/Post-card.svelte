@@ -1,6 +1,6 @@
 <script>
   import Avatar from "./icons/Avatar.svelte";
-
+  import utils from "../utils";
   export let post;
 </script>
 
@@ -62,7 +62,7 @@
       <div class="post-card-byline-content">
       <span><a href="author/{post.primary_author.slug}">{post.primary_author.name}</a></span>
         <span class="post-card-byline-date">
-          <time datetime={post.published_at}>{post.published_at}</time>
+          <time datetime={utils.dateFormat(post.published_at)}>{utils.dateFormat(post.published_at)}</time>
           <span class="bull">&bull;</span>
           {post.reading_time} MIN READ
         </span>

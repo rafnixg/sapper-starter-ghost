@@ -1,5 +1,6 @@
 <script>
     import Avatar from "./icons/Avatar.svelte";
+    import utils from "../utils"
     export let post;
 </script>
 
@@ -81,8 +82,8 @@
             <section class="post-full-byline-meta">
               <h4 class="author-name">{post.primary_author.name}</h4> 
               <div class="byline-meta-content">
-                <time class="byline-meta-date" datetime={post.published_at}>
-                  {post.published_at}
+                <time class="byline-meta-date" datetime={utils.dateFormat(post.published_at)}>
+                  {utils.dateFormat(post.published_at)}
                 </time>
                 <span class="byline-reading-time">
                   <span class="bull">&bull;</span>
