@@ -1,5 +1,6 @@
 <script>
   import Avatar from "./icons/Avatar.svelte";
+  // import Image from "svelte-image";
   import utils from "../utils";
   export let post;
 </script>
@@ -8,6 +9,7 @@
 
   {#if post.feature_image}
     <a class="post-card-image-link" href={post.slug}>
+      <!-- <Image src={post.feature_image} class="post-card-image"/> -->
       <img
         class="post-card-image"
         loading="lazy"

@@ -60,7 +60,7 @@
       {/if}
       <a
         class="rss-button"
-        href="/"
+        href="rss.xml"
         title="RSS"
         target="_blank"
         rel="noopener">

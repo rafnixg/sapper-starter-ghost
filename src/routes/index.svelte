@@ -6,6 +6,7 @@
         return posts;
       });
     const settings = await this.fetch(`settings.json`).then((r) => r.json());
+    const rss = this.fetch("rss.xml")
 
     return { posts, settings };
   }
@@ -17,6 +18,7 @@
   import HeaderIndex from "../components/Header-index.svelte";
   export let posts;
   export let settings;
+  export let segment;
    onMount(() => {
     document.body.className = "home-template";
   });
@@ -27,7 +29,7 @@
   <!--Twitter Card-->
 
 </svelte:head>
-<HeaderIndex {settings} />
+<HeaderIndex {settings} {segment}/>
 <main id="site-main" class="site-main outer">
   <div class="inner posts">
 

@@ -9,11 +9,10 @@
 </script>
 
 <script>
-  import Header from "../components/Header.svelte";
-  import HeaderIndex from "../components/Header-index.svelte";
   import Footer from "../components/Footer.svelte";
 
   export let settings;
+  export let segment;
   const nav = {
     title: settings.title,
     description: settings.description,
@@ -57,7 +56,7 @@
 
 <div class="site-wrapper">
 
-  <slot />
+  <slot {segment}/>
 
   <Footer {nav} />
 </div>

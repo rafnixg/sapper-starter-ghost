@@ -2,7 +2,6 @@
   export async function preload({ params, query }) {
     const post = await this.fetch(`${params.slug}.json`).then((r) => r.json());
     const settings = await this.fetch(`settings.json`).then((r) => r.json());
-
     return { post, settings };
   }
 </script>

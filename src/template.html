@@ -13,10 +13,10 @@
     <link rel="manifest" href="./manifest.json" crossorigin="use-credentials" />
     <link rel="icon" type="image/png" href="favicon.png" />
 
-    %sapper.scripts%
+    <link rel="alternate" type="application/rss+xml" href="rss" />
 
+    %sapper.scripts%
     %sapper.styles%
-    
     %sapper.head%
   </head>
   <body class="post-template">
@@ -26,7 +26,7 @@
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
-    <script src="./casper.js"></script>
+    <!-- <script src="./casper.js"></script>
     <script>
       $(document).ready(function () {
         var $postContent = $(".post-full-content");
@@ -40,21 +40,21 @@
         $(".author-list-item").hover(
           function () {
             var $this = $(this);
-      
+
             clearTimeout(hoverTimeout);
-      
+
             $(".author-card").removeClass("hovered");
             $(this).children(".author-card").addClass("hovered");
           },
           function () {
             var $this = $(this);
-      
+
             hoverTimeout = setTimeout(function () {
               $this.children(".author-card").removeClass("hovered");
             }, 800);
           }
         );
       });
-    </script>
+    </script> -->
   </body>
 </html>
