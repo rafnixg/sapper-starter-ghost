@@ -38,6 +38,6 @@ $ npm run export
 ## WIP
 - [X] Ghost API Config (*.ghost*)
 - [X] Google Analytics Config
-- [ ] RSS
+- [X] RSS
 - [ ] Sitemap
 - [ ] Metadata SEO & Open Graph
