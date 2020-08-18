@@ -24,36 +24,6 @@
   };
 </script>
 
-<svelte:head>
-  <title>{settings.title}</title>
-  <!--Twitter Card-->
-  <meta name="twitter:site" content={settings.twitter} />
-  <meta name="twitter:creator" content={settings.twitter} />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content={settings.url} />
-  <meta name="twitter:title" content={settings.twitter_title} />
-  <meta name="twitter:description" content={settings.twitter_description} />
-  <meta name="twitter:image" content={settings.twitter_image} />
-
-  <!--Schema-->
-  <link rel="author" href={settings.url} />
-  <link rel="publisher" href={settings.url} />
-  <meta itemprop="name" content={settings.title} />
-  <meta itemprop="description" content={settings.description} />
-  <meta itemprop="image" content={settings.cover_image} />
-
-  <!-- Facebook OpenGraph -->
-  <meta property="og:url" content={settings.url} />
-  <meta property="og:type" content="websettings" />
-  <meta property="og:title" content={settings.og_title} />
-  <meta property="og:image" content={settings.og_image} />
-  <meta property="og:description" content={settings.og_description} />
-  <meta property="og:site_name" content={settings.title} />
-  <meta property="og:locale" content={settings.lang} />
-  <meta property="article:author" content={settings.url} />
-  {#if settings.codeinjection_head}{@html settings.codeinjection_head}{/if}
-</svelte:head>
-
 <div class="site-wrapper">
 
   <slot {segment}/>
