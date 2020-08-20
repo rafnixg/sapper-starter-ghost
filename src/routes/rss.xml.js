@@ -1,5 +1,6 @@
-import ghost from "./_ghost";
 import { Feed } from "feed";
+import ghost from "./_ghost";
+import config from "../config";
 
 export async function get(req, res, next) {
   // const articles = await getRecentArticles(10);
@@ -13,13 +14,22 @@ export async function get(req, res, next) {
   // res.end(getRSS(articles));
 }
 
+const formatURL = (url) => {
+  return url ? url.replace(config.GhostURL,config.SiteURL) : url;
+}
+
+const formatHTML = (html) => {
+  const re = new RegExp(`href="${config.GhostURL}`,"g")
+  return html.replace(re,`href="${config.SiteURL}`)
+}
+
 const generateRSS = (settings, posts) => {
   const feed = new Feed({
     title: settings.title,
     description: settings.description,
-    id: settings.url,
-    link: settings.url,
-    image: settings.cover_image,
+    id: formatURL(settings.url),
+    link: formatURL(settings.url),
+    image: formatURL(settings.cover_image),
     favicon: settings.icon,
     copyright: `All rights reserved ${new Date().getFullYear()}, ${
       settings.title
@@ -38,18 +48,18 @@ const generateRSS = (settings, posts) => {
   posts.forEach((post) => {
     feed.addItem({
       title: post.title,
-      id: post.url,
-      link: post.url,
+      id: formatURL(post.url),
+      link: formatURL(post.url),
       description: post.excerpt,
-      content: post.html,
+      content: formatHTML(post.html),
       author: [
         {
           name: post.primary_author.name,
-          link: post.primary_author.url,
+          link: formatURL(post.primary_author.url),
         },
       ],
       date: new Date(post.published_at),
-      image: post.feature_image,
+      // image: post.feature_image,
     });
   });
   return feed.rss2();
