@@ -107,7 +107,7 @@
 
   <section class="post-full-content">
     <div class="post-content">
-      {@html post.html}
+      {@html utils.htmlFormat(post.html)}
     </div>
   </section>
 

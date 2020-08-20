@@ -30,9 +30,9 @@
 
       <section class="post-card-excerpt">
         {#if post.feature_image}
-          <p>{utils.excerptFormat(post.excerpt,170)}</p>
+          <p>{utils.excerptFormat(post.excerpt, 170)}</p>
         {:else}
-          <p>{utils.excerptFormat(post.excerpt,200)}</p>
+          <p>{utils.excerptFormat(post.excerpt, 200)}</p>
         {/if}
       </section>
 

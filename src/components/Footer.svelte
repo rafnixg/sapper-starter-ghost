@@ -1,15 +1,17 @@
 <script>
+import config from "../config";
+
 export let nav;
 </script>
 
 <footer class="site-footer outer">
     <div class="site-footer-content inner">
       <section class="copyright">
-        <a href="/">{nav.title}</a>
+        <a href="{config.BasePath}">{nav.title}</a>
         &copy; 2020
       </section>
       <nav class="site-footer-nav">
-        <a href="/">Latest Posts</a>
+        <a href="{config.BasePath}">Latest Posts</a>
         {#if nav.social.facebook }
         <a href="https://facebook.com/{nav.social.facebook}" target="_blank" rel="noopener">Facebook</a>
         {/if}

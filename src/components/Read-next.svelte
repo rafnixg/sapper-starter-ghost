@@ -1,6 +1,6 @@
 <script>
   import utils from "../utils";
-import PostCard from "./Post-card.svelte";
+  import PostCard from "./Post-card.svelte";
   export let related_posts;
   export let tag;
   export let next_post;
@@ -23,7 +23,7 @@ import PostCard from "./Post-card.svelte";
               {#each related_posts as post}
                 <li>
                   <h4>
-                    <a href={post.url}>{post.title}</a>
+                    <a href={utils.urlFormat(post.url)}>{post.title}</a>
                   </h4>
                   <div class="read-next-card-meta">
                     <p>

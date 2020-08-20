@@ -35,9 +35,12 @@ $ npm run export
 
 ```
 
-## WIP
-- [X] Ghost API Config (*.ghost*)
+## TODO
+- [X] Ghost API Config
 - [X] Google Analytics Config
 - [X] RSS
+- [X] Metadata SEO & Open Graph
 - [ ] Sitemap
-- [ ] Metadata SEO & Open Graph
+- [ ] Image fetch from Ghost
+- [ ] Fetch pages
+- [ ] Pagination

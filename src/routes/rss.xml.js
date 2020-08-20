@@ -1,6 +1,6 @@
 import { Feed } from "feed";
 import ghost from "./_ghost";
-import config from "../config";
+import utils from "../utils";
 
 export async function get(req, res, next) {
   // const articles = await getRecentArticles(10);
@@ -14,22 +14,13 @@ export async function get(req, res, next) {
   // res.end(getRSS(articles));
 }
 
-const formatURL = (url) => {
-  return url ? url.replace(config.GhostURL,config.SiteURL) : url;
-}
-
-const formatHTML = (html) => {
-  const re = new RegExp(`href="${config.GhostURL}`,"g")
-  return html.replace(re,`href="${config.SiteURL}`)
-}
-
 const generateRSS = (settings, posts) => {
   const feed = new Feed({
     title: settings.title,
     description: settings.description,
-    id: formatURL(settings.url),
-    link: formatURL(settings.url),
-    image: formatURL(settings.cover_image),
+    id: utils.urlFormat(settings.url),
+    link: utils.urlFormat(settings.url),
+    image: utils.urlFormat(settings.cover_image),
     favicon: settings.icon,
     copyright: `All rights reserved ${new Date().getFullYear()}, ${
       settings.title
@@ -48,14 +39,14 @@ const generateRSS = (settings, posts) => {
   posts.forEach((post) => {
     feed.addItem({
       title: post.title,
-      id: formatURL(post.url),
-      link: formatURL(post.url),
+      id: utils.urlFormat(post.url),
+      link: utils.urlFormat(post.url),
       description: post.excerpt,
-      content: formatHTML(post.html),
+      content: utils.htmlFormat(post.html),
       author: [
         {
           name: post.primary_author.name,
-          link: formatURL(post.primary_author.url),
+          link: utils.urlFormat(post.primary_author.url),
         },
       ],
       date: new Date(post.published_at),
