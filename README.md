@@ -26,6 +26,7 @@ Edit the `src/config.js` file whit your integration GHOST data
     GhostContetKey: '22444f78447824223cefc48062',
     GhostAPIVersion: 'v3'
 }
+
 ```
 
 ## Export
